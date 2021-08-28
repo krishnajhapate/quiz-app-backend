@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # custom 
+    'users',
+
+    # third party
     'rest_framework',
     'knox',
 ]
