@@ -4,7 +4,7 @@ from .models import User
 class UserCreationForm(forms.ModelForm):
     name = forms.CharField(required=True)
     email = forms.EmailField(required=True)
-    phone_number = forms.CharField(required=False)
+    phone = forms.CharField(required=False)
     user_type = forms.ChoiceField(required=True,choices=User.choices)
     password = forms.CharField(
         widget = forms.PasswordInput()

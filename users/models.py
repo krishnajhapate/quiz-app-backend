@@ -42,7 +42,7 @@ class User(AbstractUser):
     first_name = None
     last_name = None
     name = models.CharField(max_length=100,blank=True)
-    phone_number = models.CharField(max_length=20,unique=True,blank=True)
+    phone = models.CharField(max_length=20,unique=True,blank=True)
     email = models.EmailField(max_length=255,unique=True)
     user_type = models.CharField(max_length=10,choices=choices,default='1')
 
