@@ -10,16 +10,28 @@ class UserAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Personal Details',{
-            "fields":('name','email',"phone","user_type")
+            "fields":('name','email',"phone","user_type","password")
         }),
     )
-    add_fieldsets =(
-        (None,
-        {
-            'classes':('wide',),
-            'fields':('name','email','password','phone','user_type'),
-            }),
+  
+    add_fieldsets = (
+        (
+            None,
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'name',
+                    'email',
+                    'phone',
+                    'password', 
+                    'user_type'
+                )
+            }
+        ),
     )
-    
+
+    filter_horizontal = ()
+    search_fields = ('name','email','phone')
+    list_filter = ('user_type',)
 
 admin.site.register(User,UserAdmin)
